@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <script>
+      //window.server_url = "https://hippo-funny-formerly.ngrok-free.app";
+      window.server_url = "https://shark-app-mwgn9.ondigitalocean.app";
+      // window.server_url = "http://localhost:8765";
+
+
+      // window.route_prefix = "/MeetFrontend";
+    </script>
+    <script type="text/javascript">
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+
+        // Parse query parameters
+        var query = window.location.search;
+        if (query.includes('?p=/')) {
+          var path = query.split('?p=/')[1];
+          window.history.replaceState(null, null, '/' + path);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

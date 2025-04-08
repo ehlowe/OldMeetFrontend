@@ -1,0 +1,142 @@
+@keyframes jump {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.glow-button {
+  box-shadow: 0 0 10px #144dff, 0 0 20px #144dff, 0 0 30px #144dff;
+  animation: jump 2.5s infinite;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.welcome-header {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #66a3ff 45%,
+    #99ffff 50%,
+    #66a3ff 55%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: #ffffff;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.9);
+  margin: 0;
+  padding: 0.3rem 0;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Each letter uses a shared animation, offset by --i */
+.welcome-header span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;  /* Start completely invisible */
+  animation: flowUp 0.4s ease forwards;
+  animation-delay: calc(0.02s * var(--i));
+  margin-right: 1px;   /* Tiny spacing between letters */
+}
+
+/* Keyframe for the upward, fluid reveal */
+@keyframes flowUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;  /* Start invisible */
+  }
+  50% {
+    opacity: 0.5;  /* Fade in gradually */
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;  /* Fully visible at end */
+  }
+}
+
+@keyframes subtle-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  2.5% {
+    transform: rotate(3deg);
+  }
+  5% {
+    transform: rotate(-4deg);
+  }
+  7.5% {
+    transform: rotate(5deg);
+  }
+  10% {
+    transform: rotate(-4deg);
+  }
+  12.5% {
+    transform: rotate(3deg);
+  }
+  15% {
+    transform: rotate(0deg);
+  }
+}
+
+.join-lobby-button {
+  animation: subtle-shake 3.5s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
